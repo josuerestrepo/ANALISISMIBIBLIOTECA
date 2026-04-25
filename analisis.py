@@ -12,3 +12,11 @@ def analisis_filtrado(df, columna, condicion):
     """Filtrar y contar elementos."""
     return df[df[columna] == condicion].shape[0]
 
+def registrar_venta(df_ventas, cliente_id, libro_id, cantidad=1):
+    """Agrega una nueva venta al DataFrame de ventas."""
+    nueva_venta = {
+        "cliente_id": cliente_id,
+        "libro_id": libro_id,
+        "cantidad": cantidad
+    }
+    return pd.concat([df_ventas, pd.DataFrame([nueva_venta])], ignore_index=True)

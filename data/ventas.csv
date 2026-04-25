@@ -1,11 +1,3 @@
-id,producto,categoria,precio,autor
-1, Cien años de soledad ,Novela,$35000,gabriel garcía márquez
-2,El coronel no tiene quien le escriba,Novela,$28000,gabriel garcía márquez
-3,La metamorfosis,Novela,$30000,franz kafka
-4,Matemáticas Básicas,Educación,$25000,
-5,Historia de Colombia,Historia,$40000,jorge orlando meléndez
-6,El amor en los tiempos del cólera,Novela,$45000,gabriel garcía márquez
-7,Química General,Educación,$27000,
-8,La Odisea,Clásico,$32000,homer
-9,La Iliada,Clásico,$31000,homer
-10,Programación en Python,Educación,$50000,
+id_venta,id_cliente,id_libro,fecha,precio
+1001,1,101,2024-05-01,35000
+1002,2,102,2024-05-02,32000
