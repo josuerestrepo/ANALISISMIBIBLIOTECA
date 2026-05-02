@@ -18,6 +18,19 @@ ventas = registrar_venta(ventas, cliente_id=6, libro_id=6, libros=libros)
 # Guardar ventas actualizadas
 ventas.to_csv("data/ventas.csv", index=False)
 
+nuevo_libro = {
+    "libro_id": 101,
+    "titulo": "Mi Nuevo Libro",
+    "autor": "Josue",
+    "categoria_id": 2,
+    "precio": 45000.0
+}
+libros.loc[len(libros)] = nuevo_libro
+
+# Guardar cambios
+libros.to_csv("data/libros.csv", index=False)
+
+
 # Limpieza de datos
 clientes = manejar_nulos(clientes)
 clientes = estandarizar_texto(clientes, "nombre")
@@ -29,5 +42,5 @@ ventas = ventas.merge(libros[['libro_id', 'titulo']], on='libro_id', how='left')
 
 # Análisis
 print("Libro más vendido:", analisis_frecuencia(ventas, "titulo"))
-print("Producto más vendido:", analisis_frecuencia(ventas, "libro_id"))
-print("Promedio de precio por categoría:", analisis_agregacion(ventas, "libro_id", "precio"))
+print("Producto más vendido:", analisis_frecuencia(ventas, "titulo"))
+print("Promedio de precio por categoría:", analisis_agregacion(ventas, "titulo", "precio"))
