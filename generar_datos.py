@@ -15,16 +15,3 @@ for i in range(1, 101):
 df_clientes = pd.DataFrame(clientes)
 df_clientes.to_csv("data/clientes.csv", index=False)
 
-# Generar 100 libros ficticios
-libros = []
-for i in range(1, 101):
-    libro = {
-        "libro_id": i,
-        "titulo": f"Libro{i}",
-        "autor": f"Autor{i}",
-        "precio": round(random.uniform(20000, 80000), 2)  # precios en COP
-    }
-    libros.append(libro)
-
-df_libros = pd.DataFrame(libros)
-df_libros.to_csv("data/libros.csv", index=False)

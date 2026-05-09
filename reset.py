@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Definir las columnas que debe tener la tabla de ventas
-columnas = ["id_venta", "cliente_id", "libro_id", "fecha", "precio", "cliente_id.1", "libro_id.1", "categoria_id"]
+columnas = ["id_venta,cliente_id,libro_id,precio,categoria_id,cantidad"]
 
 # Crear un DataFrame vacío con esas columnas
 ventas = pd.DataFrame(columns=columnas)

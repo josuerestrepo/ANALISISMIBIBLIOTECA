@@ -9,8 +9,15 @@ libros = cargar_csv("data/libros.csv")
 ventas = cargar_csv("data/ventas.csv")
 
 # Registrar ventas con precios automáticos desde el catálogo
-ventas = registrar_venta(ventas, cliente_id=1, libro_id=3, libros=libros)
-ventas = registrar_venta(ventas, cliente_id=3, libro_id=4, libros=libros)
+
+# Limpieza de datos
+libros = limpiar_moneda(libros, "precio")
+clientes = manejar_nulos(clientes)
+clientes = estandarizar_texto(clientes, "nombre")
+ventas = limpiar_moneda(ventas, "precio")
+
+ventas = registrar_venta(ventas, cliente_id=1, libro_id=1, libros=libros)
+ventas = registrar_venta(ventas, cliente_id=3, libro_id=1, libros=libros)
 ventas = registrar_venta(ventas, cliente_id=1, libro_id=5, libros=libros)
 ventas = registrar_venta(ventas, cliente_id=2, libro_id=5, libros=libros)
 ventas = registrar_venta(ventas, cliente_id=6, libro_id=6, libros=libros)
